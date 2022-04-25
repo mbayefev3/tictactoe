@@ -1,33 +1,33 @@
 import React from 'react'
 
-export default function SearchInput({placehold,titrePost,setTitrePost,ville,setVille}) {
+export default function SearchInput({ placehold, titrePost, setTitrePost, ville, setVille }) {
 
 
 
 
-    const handlesumit=(e)=>{
+  const handlesumit = (e) => {
 
-        e.preventDefault()
-        console.log(titrePost)
-        console.log(ville)
-        setTitrePost('')
-        setVille('')
+    e.preventDefault()
+    console.log(titrePost)
+    console.log(ville)
+    setTitrePost('')
+    setVille('')
 
-    }
+  }
   return (
     <div>
 
-        <div className=''>
-        <form  onSubmit={handlesumit} className='input-elem'action="">
+      <div className=''>
+        <form onSubmit={handlesumit} className='input-elem' action="">
 
 
-        <input placeholder='Titre de poste, mots-clés ou entreprise' value={titrePost} onChange={(e)=>setTitrePost(e.target.value) } className='input-ui' type="text" />
+          <input placeholder='Titre de poste, mots-clés ou entreprise' value={titrePost} onChange={(e) => setTitrePost(e.target.value)} className='input-ui' type="text" />
 
-<input  placeholder='ville ou province' value={ville} onChange={(e)=>setVille(e.target.value) } className='input-ui' type="text" />
-<button className='search-button' type='submit'>Rechercher</button>
+          <input placeholder='ville ou province' value={ville} onChange={(e) => setVille(e.target.value)} className='input-ui' type="text" onchange={props.FilteredFunc} />
+          <button className='search-button' type='submit'>Rechercher</button>
         </form>
 
-        </div>
+      </div>
     </div>
   )
 }
