@@ -17,7 +17,18 @@ function App() {
 
   const FilteredFunc = (e) => {
 
+    const filteredData = jobData.filter(job => {
+
+      return job.entreprise.toLowerCase().includes(titrePost.toLowerCase())
+    })
+
+    setJobData({
+      filteredData
+    })
+    // console.log(filteredData, jobData)
+
   }
+  FilteredFunc()
   return (
 
 
