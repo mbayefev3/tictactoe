@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home/Home';
 import React ,{useState} from "react";
-
+import {JOB_DATA} from './DUMMYDATA'
 
 
 
@@ -11,14 +11,15 @@ function App() {
 
   const [titrePost , setTitrePost ] =useState('')
   const [ville , setVille ] =useState('')
+  const [jobData ,setJobData ]=useState(JOB_DATA)
 
   return (
 
 
     <div>
 
-      <Home ville={ville} setVille={setVille}   titrePost={titrePost} setTitrePost={setTitrePost}  />
-      <ListJobs />
+      <Home jobData={jobData} ville={ville} setVille={setVille}   titrePost={titrePost} setTitrePost={setTitrePost}  />
+     
 
     </div>
   );

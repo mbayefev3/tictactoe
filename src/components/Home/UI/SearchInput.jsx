@@ -10,6 +10,8 @@ export default function SearchInput({placehold,titrePost,setTitrePost,ville,setV
         e.preventDefault()
         console.log(titrePost)
         console.log(ville)
+        setTitrePost('')
+        setVille('')
 
     }
   return (
