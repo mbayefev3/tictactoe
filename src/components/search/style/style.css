@@ -1,7 +1,7 @@
 .job-list ol {
     list-style: none;
     border: 3px solid green;
-    max-width: 200px;
+    max-width: 250px;
     border-radius: 10px;
 }
 
