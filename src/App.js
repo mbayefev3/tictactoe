@@ -22,13 +22,13 @@ function App() {
       return job.entreprise.toLowerCase().includes(titrePost.toLowerCase())
     })
 
-    setJobData({
+    setJobData(
       filteredData
-    })
+    )
     // console.log(filteredData, jobData)
 
   }
-  FilteredFunc()
+  // FilteredFunc()
   return (
 
 

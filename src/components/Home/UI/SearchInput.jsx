@@ -13,6 +13,8 @@ export default function SearchInput({ placehold, titrePost, setTitrePost, ville,
     setTitrePost('')
     setVille('')
 
+    FilteredFunc()
+
   }
   return (
     <div>
