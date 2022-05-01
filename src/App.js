@@ -1,44 +1,14 @@
-import ListJobs from "./components/search/ListJobs";
-import logo from './logo.svg';
-import './App.css';
-import Home from './components/Home/Home';
-import React, { useState } from "react";
-import { JOB_DATA } from './DUMMYDATA'
+import React from 'react'
 
+const App = () => {
 
-
-function App() {
-
-  const [titrePost, setTitrePost] = useState('')
-  const [ville, setVille] = useState('')
-  const [jobData, setJobData] = useState(JOB_DATA)
-
-
-
-  const FilteredFunc = (e) => {
-
-    const filteredData = jobData.filter(job => {
-
-      return job.entreprise.toLowerCase().includes(titrePost.toLowerCase())
-    })
-
-    setJobData(
-      filteredData
-    )
-    // console.log(filteredData, jobData)
-
-  }
-  // FilteredFunc()
   return (
-
-
     <div>
-
-      <Home jobData={jobData} ville={ville} setVille={setVille} titrePost={titrePost} setTitrePost={setTitrePost} FilteredFunc={FilteredFunc} />
-
-
+      <h1>Hello</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+
+
+export default App
