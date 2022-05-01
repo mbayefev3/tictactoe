@@ -4,36 +4,31 @@ export default function TicTacToe() {
 const [value,setValue]=useState("")
 const [ontoggle,setontoggle]=useState(false)
 const [allvalue,setAllvalue]=useState([])
+const [arr ,setArr]=useState([false,false,false,false,false,false,false,false,false])
+const [test,setTest]=useState(['','','','','','','','',''])
 
-
-const handleClick=(value)=>{
-   if(value===''){
-    setontoggle(true)
-    setValue("X")
-    setAllvalue([...allvalue,value])
-   }else if(value==='X'){
-    setontoggle(true)
-    setValue("0")
-    setAllvalue([...allvalue,value])
-   }else if(value==='0'){
-    setontoggle(true)
-    setValue("X")
-    setAllvalue([...allvalue,value])
-   }
+const handleClick=(value,myindex)=>{
+  
+    const test1=[...test];
+    test1[myindex] = arr[myindex]?"X":'O';
+    const temp = [...arr];
+    temp[myindex] = !temp[myindex];
+    setArr(temp);
+    setTest(test1)
+   
 }
   return (
     <div className='tictac'>
 
   <div className='allbutton-ui'>
-  <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
-   <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
-   <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
-   <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
-   <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
-   <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
-   <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
-   <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
-   <Button handleClick={handleClick} ontoggle={ontoggle}  value={ontoggle ? value:''}/>
+  {arr.map((arr,i)=>{
+      return (
+          <div>
+   <Button handleClick={handleClick} myindex={i} ontoggle={ontoggle}  value={test[i]}/>
+
+          </div>
+      )
+  })}
   </div>
 
     </div>
